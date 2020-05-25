@@ -1,0 +1,12 @@
+Dự án DevOps đơn giản
+
+Kho chứa GIT này là nơi lưu trữ tất cả tài liệu giúp cho việc thực hiện.
+
+### Mục đích:
+Theo dõi theo những tài liệu trong kho lưu trữ này, bạn có thể thiết lập được một CI/CD Pipeline đơn giản với những công cụ:
+- Git
+- Jenkins
+- Maven
+- Ansible
+- Docker & Docker Hub
+- Kubernetes
