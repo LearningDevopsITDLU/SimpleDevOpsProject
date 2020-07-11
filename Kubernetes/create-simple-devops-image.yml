@@ -1,0 +1,19 @@
+---
+- hosts: ansible-server
+# become: true
+
+  tasks:
+  - name: Create Docker Image Using War File
+    command: docker build -t simple_devops_image:latest .
+    args:
+      chdir: /opt/CICDProject-Final
+
+  - name: Create Tag To Image
+    command: docker tag simple_devops_image manhhaitdlu/simple_devops_image
+
+  - name: Push Image On To Docker Hub
+    command: docker push manhhaitdlu/simple_devops_image
+
+  - name: Remove Docker Images From Ansible Server
+    command: docker rmi simple_devops_image:latest manhhaitdlu/simple_devops_image
+    ignore_errors: yes

@@ -1,0 +1,12 @@
+---
+- name: Create pods using deployment
+  hosts: kubernetes
+# become: true
+  user: admin
+
+  tasks:
+  - name: Create A Deployment
+    command: kubectl apply -f devopsitdlu-deploy.yml
+
+  - name: Update Deployment With New Pods If Image Updated In Docker Hub
+    command: kubectl rollout restart deployment.v1.apps/itdlu-deployment

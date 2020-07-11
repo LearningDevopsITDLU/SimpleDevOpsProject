@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: itdlu-service
+  labels:
+    app: itdlu-devops-project
+spec:
+  selector:
+    app: itdlu-devops-project
+  type: LoadBalancer
+  ports:
+    - port: 8080
+      targetPort: 8080
+      nodePort: 30003

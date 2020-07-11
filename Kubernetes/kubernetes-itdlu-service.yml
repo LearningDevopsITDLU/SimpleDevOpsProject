@@ -1,0 +1,9 @@
+---
+- name: Create Service For Deployment
+  hosts: kubernetes
+# become: true
+  user: admin
+
+  tasks:
+  - name: Create A Service
+    command: kubectl apply -f devopsitdlu-service.yml
